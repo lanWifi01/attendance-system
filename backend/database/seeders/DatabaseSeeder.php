@@ -17,10 +17,25 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        User::create([
+            'rfid_uid' => 'admin123',
+            'name' => 'Admin Dylan',
+            'email' => 'admin@test.com',
+            'password' => bcrypt('password') // Ensure you hash the password
+        ]);
+
+        User::create([
             'rfid_uid' => '1234567890',
             'name' => 'Dylan Bro',
             'email' => 'dylan@test.com',
+            'password' => bcrypt('password')
+        ]);
+
+        User::create([
+            'rfid_uid' => '3647621950',
+            'name' => 'Leander Bro',
+            'email' => 'leander@test.com',
+            'password' => bcrypt('password')
         ]);
     }
 }
